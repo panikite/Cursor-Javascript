@@ -29,7 +29,8 @@ let remainder = 500 - total;
 console.log(remainder);
 
 // Виведіть середнє значення цін, округлене до другого знаку після коми
-console.log((total/3).toFixed(2));
+let averagePrice = (total/3).toFixed(2);
+console.log(averagePrice);
 
 
 
@@ -54,4 +55,15 @@ console.log(profit);
 
 console.log(`Максимальна ціна: ${maxPrice}
 Мінімальна ціна: ${minPrice}
-Вартість всіх товарів: ${total}`)
+Вартість всіх товарів: ${total}
+Заокруглена в меншу сторону вартість товарів: ${totalInteger}
+Заокруглена до сотень вартість товарів: ${Math.round(totalInteger/100)*100}
+Чи є сума парна?: ${isEven}
+Решта від 500 грн: ${remainder.toFixed(2)}
+Середнє значення ціни: ${averagePrice}
+Задача з дисконотом:
+    Якщо ціна: ${price} та знижка: ${discount}, 
+    то сума до оплати: ${toPay} 
+       чистий прибуток: ${profit} 
+`
+)
