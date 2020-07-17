@@ -22,7 +22,6 @@ console.log(
 
 const max = Math.max(M,N);
 const min = Math.min(M,N);
-console.log(max,min);
 
     for(let i = min; i <=max; i++) {
         if(missEven && i%2==0) {
