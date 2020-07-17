@@ -1,14 +1,14 @@
 let N,
     M;
 
-N = parseInt(prompt("Введіть число №1:"));
+N = +(prompt("Введіть число №1:"));
 while (isNaN(N)) {
-    N = parseInt(prompt("Ввести потрібно лише ціле число:"));
+    N = +(prompt("Ввести потрібно лише ціле число:"));
 }
 
-M = parseInt(prompt("Введіть число №2:"));
+M = +(prompt("Введіть число №2:"));
 while (isNaN(M)) {
-    M = parseInt(prompt("Ввести потрібно лише ціле число:"));
+    M = +(prompt("Ввести потрібно лише ціле число:"));
 }
 
 const missEven = confirm("Пропускати парні числа?");
@@ -32,6 +32,7 @@ console.log(max,min);
     }
 
 console.log(`Сумма: ${total}`);
+
 
 
 
