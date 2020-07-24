@@ -11,7 +11,7 @@ console.log(getMaxDigit(395));
 const getPow = function (a,b) {
     let result = 1;
     for (let i = 0; i < b; i++) {
-        result = result*a;
+        result *= a;
     }
     return result;
 }
@@ -39,7 +39,7 @@ console.log(salaryAfterTax(1000));
 
 // 5. Функція, яка повертає випадкове ціле число в діапазоні від N до M. Приклад: getRandomNumber(1, 10) -> 5
 const getRandomNumber = function (min, max) {
-    return (Math.random()*(max - min + 1) + min).toFixed();
+    return Math.floor(Math.random()*(max - min + 1) + min);
 }
 console.log(getRandomNumber(2,4));
 
@@ -51,7 +51,6 @@ const countLetter = function (letter, word) {
     for ( let i = 0; i < word.length; i++) {
         word = word.toLowerCase();
         if (word[i] === letter) result++;
-        else continue;
     }
     return result;
 }
@@ -85,7 +84,7 @@ console.log(convertCurrency("2500UAH"));
 const getRandomPassword = function (length = 8) {
     let password = "";
     for (let i = 0; i < length; i++) {
-        password += (Math.random()*10).toFixed();
+        password += Math.floor(Math.random()*10);
     }
     return password
 }
@@ -132,7 +131,6 @@ const deleteDuplicateLetter = function (word) {
             if (word[j] === word[i]) counter ++;
         }
         if (counter === 1) result += word[i];
-        // result = (counter === 1) ? result += word[i] : result;
     }
     return result;
 }          
@@ -140,42 +138,6 @@ const deleteDuplicateLetter = function (word) {
 console.log(deleteDuplicateLetter('Бісквіт був дуже ніжним'));
 
 
-
-
-// document.writeln(`
-// <b> 1.Функція, яка отримує будь-яке число та виводить найбільшу цифру в цьому числі:</b> 
-//     getMaxDigit(385) => ${getMaxDigit(385)}; </br>
-//     </br>
-// <b> 2. Функція, яка визначає ступінь числа:</b> 
-//     getPow(85,3) => ${getPow(85,3)}; </br>
-//     </br>
-// <b> 3. Функція, яка форматує ім'я, роблячи першу букву великою:</b> 
-//     formatName("Avrelij") => ${formatName("Avrelij")}; </br>
-//     </br>
-// <b> 4. Функція, яка вираховує суму, що залишається після оплати податку від зарабітньої плати:</b> 
-//     salaryAfterTax(1000) => ${salaryAfterTax(1000)}; </br>
-//     </br>
-// <b> 5. Функція, яка повертає випадкове ціле число в діапазоні від N до M:</b> 
-//     getRandomNumber(2,4) => ${getRandomNumber(2,4)}; </br>
-//     </br>
-// <b> 6. Функція, яка рахує скільки разів певна буква повторюється в слові:</b> 
-//     countLetter("а", "Асталавіста") => ${countLetter("а", "Асталавіста")}; </br>
-//     </br>
-// <b> 7. Функція, яка конвертує долари в гривні та навпаки в залежності від наявності символа $ або UAH в рядку:</b> 
-//     convertCurrency("2500UAH") => ${convertCurrency("2500UAH")}; </br>
-//     </br>
-// <b> 8. Функція генерації випадкового паролю (тільки числа), довжина встановлюється користувачем або по замовчуванню = 8 символам:</b> 
-//     getRandomPassword(4) => ${getRandomPassword(4)}; </br>
-//     </br>
-// <b> 9. Функція, яка видаляє всі букви з речення:</b> 
-//     deleteLetters('a', "blablabla") => ${deleteLetters('a', "blablabla")}; </br>
-//     </br>
-// <b> 10. Функція, яка перевіряє, чи є слово паліндромом:</b> 
-//     isPalyndrom('Кит на морі романтик') => ${isPalyndrom('Кит на морі романтик')}; </br>
-//     </br>
-// <b> 11. Функція, яка видалить з речення букви, які зустрічаються більше 1 разу:</b> 
-//     deleteDuplicateLetter('Бісквіт був дуже ніжним') => ${deleteDuplicateLetter('Бісквіт був дуже ніжним')};
-// `)
 
 
 document.writeln(`
