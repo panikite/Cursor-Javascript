@@ -33,10 +33,11 @@ console.log(studentPairs);
 
 // 2. Зіставте пари з попереднього завдання та теми проєктів, над якими студенти будуть працювати:
 const assignProjects = function (pairs, themes) {
+    const pairsAndProjects = [];
     for (let i = 0; i < pairs.length; i++) {
-        pairs[i].push(themes[i]);
+        pairsAndProjects.push(pairs[i].concat(themes[i]))
     }
-    return(pairs);
+    return(pairsAndProjects);
 }
 
 const assignedProjects = assignProjects(getPairs(students),themes);
@@ -45,20 +46,21 @@ console.log(assignedProjects);
 
 
 
+
 // 3. Зіставте оцінки(marks) зі студентом(students):
 const assignMarks = function (students, marks) {
     i = 0;
     let assignedMarks = [];
-    for (let student of students) {
+    for (let i = 0; i < students.length; i++) {
         assignedMarks[i] = [];
-        assignedMarks[i].splice(0,0,student,marks[i]);
-        i++;
+        assignedMarks[i].push(students[i], marks[i]);
     }
     return assignedMarks
 }
 
 const assigendMarks = assignMarks(students, marks);
 console.log(assigendMarks);
+
 
 
 
