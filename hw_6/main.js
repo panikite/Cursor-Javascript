@@ -34,7 +34,7 @@ const getSubjects = function (student) {
     return result
 }
 
-console.log(`Список предметів для студента: ${getSubjects(students[0])}`)
+console.log(`Список предметів для студента: ${getSubjects(students[0])}`, getSubjects(students[0]))
 
 
 
@@ -75,11 +75,12 @@ console.log(`Інформація про студента getStudentInfo(student
 const getStudentsNames = function (students) {
 const sortedNames = []
 students.forEach( i => sortedNames.push(i.name))
+
 return sortedNames.sort()
 }
 
 
-console.log(`Імена студентів у алфавітному порядку: ${getStudentsNames(students)}`)
+console.log(`Імена студентів у алфавітному порядку: ${getStudentsNames(students)}`, getStudentsNames(students))
 
 
 
