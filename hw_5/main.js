@@ -134,7 +134,7 @@ console.log( replaceBadWords("Are you fucking kidding?", badWords));
 
 
 function generateCombinations(word) {
-    let firstChar,
+    let charSwap,
         charsRemaining,
         remainingPerms;
     let results = [];
@@ -144,12 +144,12 @@ function generateCombinations(word) {
         if (word.length == 1) return word;
         
         for (let i = 0; i < word.length; i++) {
-            firstChar = word[i];
+            charSwap = word[i];
             charsRemaining = word.substring(0, i) + word.substring(i + 1);
             remainingPerms = generateCombinations(charsRemaining)
             
             for (let j = 0; j < remainingPerms.length; j++) {
-                results.push(firstChar + remainingPerms[j]);
+                results.push(charSwap + remainingPerms[j]);
             }
         }
         return results;
