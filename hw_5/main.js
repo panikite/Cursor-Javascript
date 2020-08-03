@@ -7,7 +7,7 @@ const getRandomArray = function (length, min, max) {
     return randomArr
 }
     
-console.log(getRandomArray(15, 1, 100))
+console.log(`Mасив випадкових цілих чисел getRandomArray(15, 1, 100) : ${getRandomArray(15, 1, 100)}` )
     
     
     
@@ -39,7 +39,7 @@ const getModa = function (...numbers) {
     else  return finalMode.map(item => item[0])
 }
 
-console.log(getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log(`Мода getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) : ${getModa(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)}`)
     
     
 
@@ -53,7 +53,7 @@ const getAverage = function (...numbers) {
     return arr/numbers.length;
 }
 
-console.log(getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log(`Середнє арифметичне getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2): ${getAverage(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)}`);
 
 
 
@@ -78,17 +78,17 @@ const getMedian = function (...numbers) {
     }
  }
  
-console.log(getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log(`Медіана getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) : ${getMedian(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)}`);
  
 
 
-// Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
+// 5. Створіть функцію filterEvenNumbers(...numbers) – яка фільтрує парні числа передані як аргументи функції
 // Приклад: filterEvenNumbers(1, 2, 3, 4, 5, 6) -> [1, 3, 5]
 
 const filterEvenNumbers = function (...numbers) {
     return numbers.filter((item) => item % 2);
 }
-console.log(filterEvenNumbers(1, 2, 3, 4, 5, 6));
+console.log(`Фільтрація парних чисел filterEvenNumbers(1, 2, 3, 4, 5, 6) : ${filterEvenNumbers(1, 2, 3, 4, 5, 6)}`);
 
 
 
@@ -99,7 +99,7 @@ const countPositiveNumbers = function (...numbers) {
     const positive = numbers.reduce((acc, item) => item > 0 ? acc+=1 : acc)
     return positive
 }
-console.log(countPositiveNumbers(1, -2, 3, -4, -5, 6));
+console.log(`Порахувати кількість чисел більших 0 countPositiveNumbers(1, -2, 3, -4, -5, 6) : ${countPositiveNumbers(1, -2, 3, -4, -5, 6)}`);
 
 
 
@@ -110,7 +110,7 @@ const getDividedByFive = function (...numbers) {
     return numbers.filter((item) => !(item % 5))
 }
   
-console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+console.log(`Відфільтрувати елементи та залишити ті, як ціло діляться на 5 getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2) : ${getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2)}`);
 
 
 
@@ -125,35 +125,79 @@ const replaceBadWords = function (string, badWordsList) {
 }
 
 let badWords = ["shit", "fuck"];
-console.log( replaceBadWords("Are you fucking kidding?", badWords));
+console.log(`Фільтр поганих слів: replaceBadWords("Are you fucking kidding?", badWords) : ${replaceBadWords("Are you fucking kidding?", badWords)}`);
 
 
+// 9.Створіть функцію divideByThree(word), яка розбиває кожне слово на умовні склади по 3 букви. Якщо букв менше трьох – не розбиває. Пробіли завжди видаляються. Рядок приводится до нижнього регістру. Приклад: divideByThree("Commander) -> ["com", "man", "der"] Приклад: divideByThree("live") -> ["liv", "e"]
+
+const divideByThree = function (word) {
+    const string = word.toLowerCase().split(' ').join('')
+    if (string.length < 3) return string
+    else {
+        const result = [];
+        for (let i = 0; i < string.length; i = i+3) {
+            result.push(string.substr(i,3))
+        }
+        return result
+    }
+}
+
+console.log(`Розбиття слова по 3 букви divideByThree("Commander") : ${divideByThree("Commander")}`);
 
 
 // 10. Створіть функцію generateCombinations(word), яка видасть всі можливі перестановки(унікальні, без повторень) букв в слові. Для тестів не передавайте слова в яких більше 10 букв. Краще взагалі обмежити работу функції 10 буквами. Приклад: generateCombinations("man") -> ["man", "mna", "amn", "anm", "nam", "nma"] Приклад: generateCombinations("ol") -> ["ol", "lo"]
 
-
-function generateCombinations(word) {
-    let charSwap,
-        charsRemaining,
-        remainingPerms;
-    let results = [];
+// function generateCombinations(word) {
+//     let charSwap,
+//         charsRemaining,
+//         remainingPerms;
+//     let results = [];
     
-    if (word.length >= 10) return "The word shoud be less then 10 characters"
-    else {
-        if (word.length == 1) return word;
+//     if (word.length >= 10) return "The word shoud be less then 10 characters"
+    
+//     if (word.length == 1) return word;
+    
+//     for (let i = 0; i < word.length; i++) {
+//         charSwap = word[i];
+//         charsRemaining = word.substring(0, i) + word.substring(i + 1);
+//         remainingPerms = generateCombinations(charsRemaining)
         
-        for (let i = 0; i < word.length; i++) {
-            charSwap = word[i];
-            charsRemaining = word.substring(0, i) + word.substring(i + 1);
-            remainingPerms = generateCombinations(charsRemaining)
-            
-            for (let j = 0; j < remainingPerms.length; j++) {
-                results.push(charSwap + remainingPerms[j]);
-            }
-        }
-        return results;
-    }
-}
+//         for (let j = 0; j < remainingPerms.length; j++) {
+//             results.push(charSwap + remainingPerms[j]);
+//         }
+//     }
+//     return results;
+// }
 
-console.log(generateCombinations("man"))
+
+// function generateCombinations(word) {
+//     let charSwap,
+//         charsRemaining,
+//         remainingPerms;
+//     let results = [];
+    
+//     if (word.length >= 10) return "The word shoud be less then 10 characters"
+    
+//     if (word.length == 1) return word;
+    
+//     word.split('').forEach((iteratedChar,i,arr)=>{
+//         // charSwap = item;
+//         charsRemaining = word.substring(0, i) + word.substring(i + 1);
+//         remainingPerms = generateCombinations(charsRemaining)
+//         for (i in remainingPerms) results.push(iteratedChar + i);
+//     })
+
+//     // for (let i = 0; i < word.length; i++) {
+//     //     charSwap = word[i];
+//     //     charsRemaining = word.substring(0, i) + word.substring(i + 1);
+//     //     remainingPerms = generateCombinations(charsRemaining)
+        
+//     //     for (let j = 0; j < remainingPerms.length; j++) {
+//     //         results.push(charSwap + remainingPerms[j]);
+//     //     }
+//     // }
+//     return results;
+// }
+
+
+// console.log(`Всі можливі перестановки букв у слові generateCombinations("man") ${generateCombinations("man")}`)
