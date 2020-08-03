@@ -64,7 +64,7 @@ const getStudentInfo = function (student) {
     return studentInfo
 }
 
-console.log(`Інформація про студента: ${JSON.stringify(getStudentInfo(students[0]))}`)
+console.log(`Інформація про студента getStudentInfo(students[0] : ${JSON.stringify(getStudentInfo(students[0]))}`)
 
 
 
@@ -127,7 +127,7 @@ const calculateWordLetters = function(word) {
     return result
 }
 
-console.log(`Кількість букв та їх повтрень у слові: ${JSON.stringify(calculateWordLetters("тест"))}`)
+console.log(`Кількість букв та їх повторень у слові calculateWordLetters("тест") : ${JSON.stringify(calculateWordLetters("тест"))}`)
 
 
 
