@@ -1,0 +1,101 @@
+*,body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 14px;
+    line-height: 1.8;
+}
+.generateId_container {
+    background-color: rgb(190, 190, 190);
+    padding: 50px 0 150px;
+
+}
+.generateId_description {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+#id_list {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 22px;
+    font-weight: bold;
+}
+.change_fontsize_container {
+    display: flex;
+    width: 80%;
+    padding: 50px 0 150px;
+    margin: 0 auto;
+}
+.content {
+    width: 70%;
+}
+.controls {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+}
+button {
+    margin: 15px 35px;
+    padding: 15px 35px;
+    color: #fff;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+button:hover {
+    filter: hue-rotate(35deg)brightness(80%);
+}
+button:active {
+    filter: hue-rotate(45deg);
+}
+
+button[data-target="up"] {
+    background-color: green;
+    position: relative;
+}
+button[data-target="up"]::after {
+    position: absolute;
+    display: block;
+    content: "";
+    right: 15px;
+    top: 48%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-right:2px #fff solid;
+    border-top:2px #fff solid;
+    border-left:0 transparent solid;
+    border-bottom:0 transparent solid;
+    transform: rotate(-45deg);
+}
+button[data-target="down"] {
+    background-color: rgb(220, 20, 103);
+    position: relative;
+}
+button[data-target="down"]::after {
+    position: absolute;
+    display: block;
+    content: "";
+    right: 15px;
+    top: 44%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-right:2px #fff solid;
+    border-top:2px #fff solid;
+    border-left:0 transparent solid;
+    border-bottom:0 transparent solid;
+    transform: rotate(135deg);
+}
+button[data-target=""] {
+    background-color: rgb(221, 181, 0);
+}
+button[data-target="genId"] {
+    background-color: white;
+    color: black;
+    border: 1px solid grey;
+}
