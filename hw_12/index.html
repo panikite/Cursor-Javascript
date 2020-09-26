@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+<header class="header"> 
+    <img class="header_logo" src="./img/logo.png"/>
+</header>    
+
+<div class="tabs">
+    <div class="tab tab-active" id="show_film"> Film info</div>
+    <div class="tab" id="planets">Planets</div>
+</div>
+
+<!-- Film info -->
+<div class="film_container">
+    <div class="film_input">
+        <p class="film_text">Find out information about your favorite part of the Star Wars </p>
+        <p class="film_hint">(enter a number from 1 to 5):</p>
+        <div class="film_wrap">
+            <input id="film_number" type="text" placeholder="film number"/>
+            <button id="info">Get info</button>
+        </div>
+    </div>
+    
+    <!-- Film info container -->
+    <div class="film_info">
+    </div>
+</div>
+
+<!-- Planet info -->
+<div class="planet_container">
+    <div class="planet_wrap">
+        <div class="planet_info"></div>
+        <div class="planet_buttons">
+            <button id="planets_previous">Previous</button>
+            <span id="planet_page"></span>
+            <button id="planets_next">Next</button>
+        </div>
+    </div>
+</div>
+
+<img class="img_char" src='./img/char.png'/>
+<img class="img_star" src="./img/star.png"/>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="tabs.js"></script>     
+<script src="main.js"></script>
+
+</body>
+</html>
